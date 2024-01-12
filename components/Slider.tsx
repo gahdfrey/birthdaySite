@@ -9,7 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 export function Slider() {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: false })
   )
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
