@@ -17,7 +17,8 @@ export default function Home() {
   return (
     <main
       className={` font-cursive relative p-4 max-w-[1170px] mx-auto min-h-screen bg-cover bg-center bg-no-repeat`}
-      style={{ backgroundImage: "url('/IMG_1985.jpg')" }}
+      style={{ backgroundImage: "url('/IMG_1985.JPG')" }}
+      // style={{ backgroundImage: "url('/IMG_1985.jpg')" }}
     >
       {/* Overlay div */}
       <div className="absolute inset-0 bg-black opacity-10"></div>
