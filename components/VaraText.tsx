@@ -57,7 +57,7 @@ export default function VaraText({ text }: { text: string }) {
 
       <br />
       <br />
-      <div className="mb-2 text-2xl">So,here&lsquo;s my little gift</div>
+      <div className="mb-2 text-2xl">So, here&#39;s my little gift</div>
     </div>
   );
 }
