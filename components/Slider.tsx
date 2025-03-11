@@ -1,42 +1,49 @@
-"use client"
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi, } from './ui/carousel';
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from "embla-carousel-autoplay"
-import { Skeleton } from "@/components/ui/skeleton"
+import React from "react";
+import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "./ui/carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function Slider() {
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
-  )
-  const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
-  const [count, setCount] = React.useState(0)
+  );
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
 
   React.useEffect(() => {
     if (!api) {
-      return
+      return;
     }
 
-    setCount(api.scrollSnapList().length)
-    setCurrent(api.selectedScrollSnap() + 1)
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   // Array of carousel items
   const carouselItems = [
-    { content: '/IMG_1833.PNG' },
-    { content: '/IMG_1834.PNG' },
-    { content: '/IMG_1835.PNG' },
-    { content: '/IMG_1882.PNG' },
-    { content: '/IMG_1883.PNG' },
-    { content: '/IMG_1884.PNG' },
-    { content: '/IMG_1885.PNG' },
+    { content: "/IMG_1978.jpg" },
+    { content: "/IMG_1979.jpg" },
+    { content: "/IMG_1980.jpg" },
+    { content: "/IMG_1981.jpg" },
+    // { content: "/IMG_1982.jpg" },
+    { content: "/IMG_1983.jpg" },
+    { content: "/IMG_1984.jpg" },
   ];
 
   const [imageLoaded, setImageLoaded] = React.useState<boolean>(false);
@@ -49,18 +56,22 @@ export function Slider() {
     <div>
       <Carousel
         plugins={[plugin.current]}
-        setApi={setApi} opts={{
+        setApi={setApi}
+        opts={{
           // align: "start",
           loop: true,
           dragFree: true,
-        }}>
+        }}
+      >
         <CarouselContent>
           {/* Map through the array and generate CarouselItem components */}
           {carouselItems.map((item, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               {/* Use next/image for displaying images */}
               <Skeleton
-                className={`h-full w-full object-cover rounded-lg ${imageLoaded ? 'hidden' : 'block'}`}
+                className={`h-full w-full object-cover rounded-lg ${
+                  imageLoaded ? "hidden" : "block"
+                }`}
               >
                 <Image
                   src={item.content}
@@ -76,6 +87,7 @@ export function Slider() {
                   alt={`Image ${index + 1}`}
                   width={500}
                   height={200}
+                  className="rounded-lg"
                 />
               )}
             </CarouselItem>
@@ -89,7 +101,7 @@ export function Slider() {
       </div>
     </div>
   );
-};
+}
 
 export default Slider;
 // "use client"
@@ -100,13 +112,8 @@ export default Slider;
 // import Autoplay from "embla-carousel-autoplay"
 // import { Skeleton } from "@/components/ui/skeleton"
 
-
-
-
-
-
 // export function Slider() {
-    
+
 //     const plugin = React.useRef(
 //         Autoplay({ delay: 2000, stopOnInteraction: true })
 //       )
@@ -118,10 +125,10 @@ export default Slider;
 //         if (!api) {
 //           return
 //         }
-    
+
 //         setCount(api.scrollSnapList().length)
 //     setCurrent(api.selectedScrollSnap() + 1)
- 
+
 //     api.on("select", () => {
 //       setCurrent(api.selectedScrollSnap() + 1)
 //     })
@@ -139,7 +146,7 @@ export default Slider;
 
 //   return (
 //     <div>
-//       <Carousel 
+//       <Carousel
 //         plugins={[plugin.current]}
 //         setApi={setApi} opts={{
 //     // align: "start",
@@ -171,4 +178,3 @@ export default Slider;
 // };
 
 // export default Slider;
-
