@@ -12,7 +12,7 @@ export default function Home() {
     >
       <div className="max-w-[1170px] mx-auto">
         {/* Overlay div */}
-        <div className="absolute inset-0 bg-black opacity-[35%]"></div>
+        <div className="absolute inset-0 bg-black opacity-10"></div>
 
         {/* Content (ensuring it's above the overlay) */}
         <div className="relative z-10">
