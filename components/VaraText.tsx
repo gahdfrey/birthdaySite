@@ -3,10 +3,10 @@
 import React, { useEffect } from "react";
 import Vara from "vara";
 
-var idealFontSize = 78,
+var idealFontSize = 48,
   idealScreenSize = 1920,
-  maxFontSize = 72,
-  minFontSize = 30;
+  maxFontSize = 64,
+  minFontSize = 22;
 
 export default function VaraText({ text }: { text: string }) {
   useEffect(() => {
