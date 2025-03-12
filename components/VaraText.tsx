@@ -5,8 +5,8 @@ import Vara from "vara";
 
 var idealFontSize = 78,
   idealScreenSize = 1920,
-  maxFontSize = 64,
-  minFontSize = 22;
+  maxFontSize = 72,
+  minFontSize = 30;
 
 export default function VaraText({ text }: { text: string }) {
   useEffect(() => {
