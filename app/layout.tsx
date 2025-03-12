@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/components/theme-provider";
+// import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 // import "./globals.css";
 import "./globals.css"; // Ensure you import your global styles
@@ -22,14 +22,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="icon" href="/IMG_1978.jpg" />
       </head>
       <body>
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        > */}
+        {children}
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );

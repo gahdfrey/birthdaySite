@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Vara from "vara";
 
-var idealFontSize = 48,
+var idealFontSize = 78,
   idealScreenSize = 1920,
   maxFontSize = 64,
   minFontSize = 22;
@@ -43,7 +43,7 @@ export default function VaraText({ text }: { text: string }) {
   return (
     <div id="vara-container" className="z-[20]">
       <div>
-        <span className="text-3xl text-[#ffffff]">Dear Juliet,</span>
+        <span className="text-5xl text-[#ffffff]">Dear Juliet,</span>
         <p className="text-2xl">
           Every birthday we celebrate is special, and today is no exception. I
           hope this day brings you as much joy as you bring to those around you.
